@@ -42,7 +42,13 @@ public class DukesBDay implements Serializable {
     }
 
     public String processBirthday() {
-        // Insert code here
+        this.setAgeDiff(dukesBirthdayBean.getAgeDifference(yourBD));
+        logger.log(Level.INFO, "age diff from dukesbday {0}", ageDiff);
+        this.setAbsAgeDiff(Math.abs(this.getAgeDiff()));
+        logger.log(Level.INFO, "absAgeDiff {0}", absAgeDiff);
+        this.setAverageAgeDifference(dukesBirthdayBean.getAverageAgeDifference());
+        logger.log(Level.INFO, "averageAgeDifference {0}", averageAgeDifference);
+        return "/response.xhtml";
     }
 
     /**
